@@ -69,6 +69,16 @@ const Customizer = () => {
       setActiveEditorTab('');
     })
   }
+  const handleSaveImage =()=>{
+    setGeneratingImg(true);
+    setTimeout(()=>{
+      downloadCanvasToImage('canvas','custom-shirt.png')
+      setGeneratingImg(false)
+    },1000)
+  }
+  const checkFunction = () => {
+    return file !== "" || snap.color !== "#EFBD48";
+  }
   return (
    <AnimatePresence>
        {!snap.intro && (
@@ -100,9 +110,26 @@ const Customizer = () => {
           title="GO Back"
           handleClick={()=>{
             state.intro=true
+            setFile('')
+            setActiveEditorTab('')
+            setPrompt('')
+            state.logoDecal='./threejs.png';
+            state.fullDecal='./threejs.png';
+            state.isFullTexture= false;
+            state.isLogoTexture=true
           }}
           customStyles="w-fit px-4 py-2.5 font-bold text-sm"
           />
+            {/* (file === "" || state.color === "#EFBD48") */}
+            {checkFunction() && (
+              <CustomButton
+                type="filled"
+                title="Save Image"
+                handleClick={handleSaveImage}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm mt-2"
+              />
+            )}          
+
         </motion.div>
         <motion.div
         className='filtertabs-container'{...slideAnimation('up')}
