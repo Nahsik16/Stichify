@@ -57,6 +57,10 @@ const Customizer = () => {
         state.isFullTexture =false;  
         break;
     }
+    setActiveFilterTab({
+      ...activeFilterTab,
+      [tabName]:!activeFilterTab[tabName]
+    })
   }
   const readFile =(type)=>{
     reader(file)
@@ -108,8 +112,8 @@ const Customizer = () => {
             key={tab.name}
             tab={tab}
             isFilterTab
-            isActiveTab=''
-            handleClick={()=>{}}
+            isActiveTab={activeFilterTab[tab.name]}
+            handleClick={()=> handleActiveFilterTab(tab.name)}
             />
           ))}
           
