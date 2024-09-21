@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <AnimatePresence>
     {snap.intro && (
-      <motion.section className="home"{...slideAnimation('left')}>
+      <motion.section className='home'{...slideAnimation('left')}>
       <motion.header {...slideAnimation('down')} >
         <img src="./threejs.png" alt="logo" className='w-8 h-8 object-contain' />
       </motion.header>
@@ -27,7 +27,7 @@ const Home = () => {
         <motion.div  {...headContentAnimation}
         className='flex flex-col gap-5'
         >
-          <p className='max-w-md font-normal text-gray-600 text-base'>
+          <p className='max-w-md font-normal text-black text-base'>
             Create your unique and exclusive shirt with our brand-new #D customization tool.<strong>Unleash your imagination</strong>{" "} and define your own style.
           </p>
           <CustomButton type="filled"

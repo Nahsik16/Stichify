@@ -17,18 +17,21 @@ html {
 
 .app {
   @apply relative w-full h-screen overflow-hidden;
+  transition: all 0.3s ease-in;
+ }
+.intro-background{
   background: rgb(247,219,88);
-background: linear-gradient(90deg, rgb(214, 190, 81) 0%, rgba(247,219,88,1) 36%, rgba(168, 150, 72, 0.715) 63%);
+  background: linear-gradient(90deg, rgb(214, 190, 81) 0%, rgba(247,219,88,1) 36%, rgba(168, 150, 72, 0.715) 63%);
 }
 
 .home {
   @apply w-fit xl:h-full flex xl:justify-between justify-start items-start flex-col xl:py-8 xl:px-36 sm:p-8 p-6 max-xl:gap-7 absolute z-10;
-  
 
 }
 
 .home-content {
   @apply flex-1 xl:justify-center justify-start flex flex-col gap-10;
+  
 }
 
 .head-text {
